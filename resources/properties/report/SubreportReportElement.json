@@ -1,0 +1,88 @@
+[
+    {
+        "title": "@@report.subreport.edit@@",
+        "properties": [
+            {
+                "name": "id",
+                "label": "ID",
+                "type": "hidden"
+            },
+            {
+                "name": "reportId",
+                "label": "@@report.subreport.reportId@@",
+                "type": "selectbox",
+                "required": "True",
+                "options_ajax": "[CONTEXT_PATH]/web/json/console/app[APP_PATH]/cbuilder/report/options"
+            },
+            {
+                "name": "binder",
+                "label": "@@userview.sqlchartmenu.binder@@",
+                "type": "elementselect",
+                "options_ajax": "[CONTEXT_PATH]/web/property/json/getElements?classname=org.joget.apps.datalist.model.DataListBinderDefault",
+                "url": "[CONTEXT_PATH]/web/property/json[APP_PATH]/getPropertyOptions"
+            },
+            {
+                "name": "reportParams",
+                "label": "@@report.subreport.reportParams@@",
+                "type": "grid",
+                "columns": [
+                    {
+                        "key": "param",
+                        "label": "@@report.subreport.paramName@@",
+                        "required": "True"
+                    },
+                    {
+                        "key": "value",
+                        "label": "@@report.subreport.paramValue@@"
+                    },
+                    {
+                        "key": "default",
+                        "label": "@@report.subreport.default@@"
+                    }
+                ],
+                "control_field": "binder",
+                "control_value": "",
+                "control_use_regex": "false"
+            }
+        ]
+    },
+    {
+        "title": "@@report.subreport.reportParamMapping@@",
+        "properties": [
+            {
+                "name": "reportParamMapping",
+                "label": "@@report.subreport.reportParams@@",
+                "type": "grid",
+                "columns": [
+                    {
+                        "key": "param",
+                        "label": "@@report.subreport.paramName@@",
+                        "required": "True"
+                    },
+                    {
+                        "key": "value",
+                        "label": "@@report.subreport.paramValueColumn@@",
+                        "options_ajax_on_change": "id:binder.className;binderId:binder.className;binderJson:binder.properties",
+                        "options_ajax": "[CONTEXT_PATH]/web/json/console/app[APP_PATH]/builder/binder/columns",
+                        "options_ajax_mapping": {
+                            "arrayObj": "columns",
+                            "value": "name",
+                            "label": "label",
+                            "addEmpty": true
+                        },
+                        "options_ajax_method": "POST",
+                        "required": "True"
+                    },
+                    {
+                        "key": "default",
+                        "label": "@@report.subreport.default@@"
+                    }
+                ],
+                "required": "True"
+            }
+        ],
+        "control_field": "binder",
+        "control_value": ".+",
+        "control_use_regex": "true"
+    }
+]

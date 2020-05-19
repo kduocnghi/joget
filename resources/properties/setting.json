@@ -1,0 +1,118 @@
+[
+    {
+        "title": "@@reportBuilder.reportProperties@@",
+        "properties": [
+            {
+                "name": "id",
+                "label": "@@form.form.id@@",
+                "type": "readonly",
+                "required": "True"
+            },
+            {
+                "name": "name",
+                "label": "@@form.form.name@@",
+                "type": "textfield",
+                "required": "True"
+            },
+            {
+                "name": "description",
+                "label": "@@form.form.description@@",
+                "type": "textarea",
+                "cols": "40",
+                "rows": "10"
+            },
+            {
+                "label": "@@reportBuilder.pageSetting@@",
+                "type": "header"
+            },
+            {
+                "name": "pageWidth",
+                "label": "@@reportBuilder.pageWidth@@",
+                "type": "textfield",
+                "required": "True"
+            },
+            {
+                "name": "pageHeight",
+                "label": "@@reportBuilder.pageHeight@@",
+                "type": "textfield",
+                "required": "True"
+            },
+            {
+                "label": "@@reportBuilder.orientation@@",
+                "name": "orientation",
+                "required": "true",
+                "type": "radio",
+                "value": "portrait",
+                "options": [
+                    {
+                        "value": "portrait",
+                        "label": "@@reportBuilder.portrait@@"
+                    },
+                    {
+                        "value": "landscape",
+                        "label": "@@reportBuilder.landscape@@"
+                    }
+                ]
+            },
+            {
+                "name": "leftMargin",
+                "label": "@@reportBuilder.leftMargin@@",
+                "type": "textfield",
+                "required": "True"
+            },
+            {
+                "name": "rightMargin",
+                "label": "@@reportBuilder.rightMargin@@",
+                "type": "textfield",
+                "required": "True"
+            },
+            {
+                "name": "topMargin",
+                "label": "@@reportBuilder.topMargin@@",
+                "type": "textfield",
+                "required": "True"
+            },
+            {
+                "name": "bottomMargin",
+                "label": "@@reportBuilder.bottomMargin@@",
+                "type": "textfield",
+                "required": "True"
+            },
+            {
+                "label": "@@reportBuilder.backgroundImage@@",
+                "name": "background_image",
+                "type": "image",
+                "appPath": "[APP_PATH]",
+                "allowInput": "true",
+                "isPublic": "true",
+                "imageSize": "width:100px;height:70px;"
+            },
+            {
+                "label": "@@reportBuilder.backgroundImageType@@",
+                "name": "background_type",
+                "required": "true",
+                "type": "selectbox",
+                "value": "cover",
+                "options": [
+                    {
+                        "value": "cover",
+                        "label": "@@reportBuilder.cover@@"
+                    },
+                    {
+                        "value": "contain",
+                        "label": "@@reportBuilder.contain@@"
+                    },
+                    {
+                        "value": "repeat",
+                        "label": "@@reportBuilder.repeat@@"
+                    }
+                ]
+            },
+            {
+                "label": "@@reportBuilder.backgroundColor@@",
+                "name": "background_color",
+                "type": "color"
+            }
+        ]
+    }
+]

@@ -1,0 +1,102 @@
+[
+    {
+        "title": "@@report.text.edit@@",
+        "properties": [
+            {
+                "name": "id",
+                "label": "ID",
+                "type": "hidden"
+            },
+            {
+                "name": "text",
+                "label": "@@report.text@@",
+                "type": "textarea",
+                "rows": "5",
+                "required": "True"
+            },
+            {
+                "name": "bold",
+                "label": "@@report.text.bold@@",
+                "type": "checkbox",
+                "options": [
+                    {
+                        "value": "true",
+                        "label": ""
+                    }
+                ]
+            },
+            {
+                "name": "italic",
+                "label": "@@report.text.italic@@",
+                "type": "checkbox",
+                "options": [
+                    {
+                        "value": "true",
+                        "label": ""
+                    }
+                ]
+            },
+            {
+                "name": "decoration",
+                "label": "@@report.text.decoration@@",
+                "type": "checkbox",
+                "options": [
+                    {
+                        "value": "underline",
+                        "label": "@@report.text.underline@@"
+                    },
+                    {
+                        "value": "overline",
+                        "label": "@@report.text.overline@@"
+                    },
+                    {
+                        "value": "line-through",
+                        "label": "@@report.text.strikeThrough@@"
+                    }
+                ]
+            },
+            {
+                "name": "size",
+                "label": "@@report.size@@",
+                "type": "textfield"
+            },
+            {
+                "name": "align",
+                "label": "@@report.align@@",
+                "type": "radio",
+                "value": "left",
+                "options": [
+                    {
+                        "value": "left",
+                        "label": "@@report.align.left@@"
+                    },
+                    {
+                        "value": "center",
+                        "label": "@@report.align.center@@"
+                    },
+                    {
+                        "value": "right",
+                        "label": "@@report.align.right@@"
+                    }
+                ]
+            },
+            {
+                "name": "color",
+                "label": "@@report.color@@",
+                "type": "color"
+            },
+            {
+                "name": "height",
+                "label": "@@report.height@@",
+                "type": "textfield"
+            },
+            {
+                "name": "marginBottom",
+                "label": "@@report.marginBottom@@",
+                "type": "textfield",
+                "value" : "10px"
+            }
+        ]
+    }
+]
+

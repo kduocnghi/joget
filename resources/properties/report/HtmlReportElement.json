@@ -1,0 +1,21 @@
+[
+    {
+        "title": "@@report.html.edit@@",
+        "properties": [
+            {
+                "name": "id",
+                "label": "ID",
+                "type": "hidden"
+            },
+            {
+                "name": "html",
+                "label": "@@report.html.html@@",
+                "type": "codeeditor",
+                "mode": "html",
+                "required": "true"
+            }
+        ]
+    }
+]
+
+

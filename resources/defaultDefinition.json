@@ -1,0 +1,14 @@
+{
+    "properties" : {
+        "id" : "%s",
+        "name" : "%s",
+        "description" : "%s",
+        "pageWidth" : "210",
+        "pageHeight" : "297",
+        "orientation" : "portrait",
+        "leftMargin" : "10",
+        "rightMargin" : "10",
+        "topMargin" : "10",
+        "bottomMargin" : "10"
+    }
+}

@@ -1,0 +1,391 @@
+[
+    {
+        "title": "@@report.qrcode.edit@@",
+        "properties": [
+            {
+                "name": "id",
+                "label": "ID",
+                "type": "hidden"
+            },
+            {
+                "name": "type",
+                "label": "@@report.barcode.type@@",
+                "type": "selectbox",
+                "value": "Url",
+                "options": [
+                    {
+                        "value": "Bookmark",
+                        "label": "@@report.qrcode.type.Bookmark@@"
+                    },
+                    {
+                        "value": "Email",
+                        "label": "@@report.qrcode.type.Email@@"
+                    },
+                    {
+                        "value": "GeoInfo",
+                        "label": "@@report.qrcode.type.GeoInfo@@"
+                    },
+                    {
+                        "value": "Girocode",
+                        "label": "@@report.qrcode.type.Girocode@@"
+                    },
+                    {
+                        "value": "GooglePlay",
+                        "label": "@@report.qrcode.type.GooglePlay@@"
+                    },
+                    {
+                        "value": "KddiAu",
+                        "label": "@@report.qrcode.type.KddiAu@@"
+                    },
+                    {
+                        "value": "MMS",
+                        "label": "@@report.qrcode.type.MMS@@"
+                    },
+                    {
+                        "value": "MeCard",
+                        "label": "@@report.qrcode.type.MeCard@@"
+                    },
+                    {
+                        "value": "SMS",
+                        "label": "@@report.qrcode.type.SMS@@"
+                    },
+                    {
+                        "value": "Telephone",
+                        "label": "@@report.qrcode.type.Telephone@@"
+                    },
+                    {
+                        "value": "Text",
+                        "label": "@@report.qrcode.type.Text@@"
+                    },
+                    {
+                        "value": "Url",
+                        "label": "@@report.qrcode.type.Url@@"
+                    },
+                    {
+                        "value": "VCard",
+                        "label": "@@report.qrcode.type.VCard@@"
+                    },
+                    {
+                        "value": "Wifi",
+                        "label": "@@report.qrcode.type.Wifi@@"
+                    },
+                    {
+                        "value": "YouTube",
+                        "label": "@@report.qrcode.type.YouTube@@"
+                    }
+                ]
+            },
+            {
+                "name": "value",
+                "label": "@@report.qrcode.value@@",
+                "type": "textfield",
+                "required": "true",
+                "control_field": "type",
+                "control_value": "GooglePlay|YouTube|Text",
+                "control_use_regex": "true"
+            },
+            {
+                "name": "url",
+                "label": "@@report.qrcode.url@@",
+                "type": "textfield",
+                "required": "true",
+                "control_field": "type",
+                "control_value": "Bookmark|Url",
+                "control_use_regex": "true"
+            },
+            {
+                "name": "latitude",
+                "label": "@@report.qrcode.latitude@@",
+                "type": "textfield",
+                "required": "true",
+                "control_field": "type",
+                "control_value": "GeoInfo",
+                "control_use_regex": "true"
+            },
+            {
+                "name": "longitude",
+                "label": "@@report.qrcode.longitude@@",
+                "type": "textfield",
+                "required": "true",
+                "control_field": "type",
+                "control_value": "GeoInfo",
+                "control_use_regex": "true"
+            },
+            {
+                "name": "bic",
+                "label": "@@report.qrcode.bic@@",
+                "type": "textfield",
+                "required": "true",
+                "control_field": "type",
+                "control_value": "Girocode",
+                "control_use_regex": "false"
+            },
+            {
+                "name": "name",
+                "label": "@@report.qrcode.name@@",
+                "type": "textfield",
+                "required": "true",
+                "control_field": "type",
+                "control_value": "Girocode|KddiAu|VCard",
+                "control_use_regex": "true"
+            },
+            {
+                "name": "iban",
+                "label": "@@report.qrcode.iban@@",
+                "type": "textfield",
+                "control_field": "type",
+                "control_value": "Girocode",
+                "control_use_regex": "false"
+            },
+            {
+                "name": "amount",
+                "label": "@@report.qrcode.amount@@",
+                "type": "textfield",
+                "control_field": "type",
+                "control_value": "Girocode",
+                "control_use_regex": "false"
+            },
+            {
+                "name": "purposeCode",
+                "label": "@@report.qrcode.purposeCode@@",
+                "type": "textfield",
+                "control_field": "type",
+                "control_value": "Girocode",
+                "control_use_regex": "false"
+            },
+            {
+                "name": "reference",
+                "label": "@@report.qrcode.reference@@",
+                "type": "textfield",
+                "control_field": "type",
+                "control_value": "Girocode",
+                "control_use_regex": "false"
+            },
+            {
+                "name": "hint",
+                "label": "@@report.qrcode.hint@@",
+                "type": "textfield",
+                "control_field": "type",
+                "control_value": "Girocode",
+                "control_use_regex": "false"
+            },
+            {
+                "name": "name2",
+                "label": "@@report.qrcode.name@@",
+                "type": "textfield",
+                "control_field": "type",
+                "control_value": "KddiAu",
+                "control_use_regex": "true"
+            },
+            {
+                "name": "address",
+                "label": "@@report.qrcode.address@@",
+                "type": "textfield",
+                "control_field": "type",
+                "control_value": "KddiAu|MeCard|VCard",
+                "control_use_regex": "true"
+            },
+            {
+                "name": "email",
+                "label": "@@report.qrcode.email@@",
+                "type": "textfield",
+                "required": "true",
+                "control_field": "type",
+                "control_value": "Email",
+                "control_use_regex": "true"
+            },
+            {
+                "name": "email1",
+                "label": "@@report.qrcode.email@@",
+                "type": "textfield",
+                "control_field": "type",
+                "control_value": "KddiAu|MeCard",
+                "control_use_regex": "true"
+            },
+            {
+                "name": "email2",
+                "label": "@@report.qrcode.email@@",
+                "type": "textfield",
+                "control_field": "type",
+                "control_value": "KddiAu",
+                "control_use_regex": "true"
+            },
+            {
+                "name": "email3",
+                "label": "@@report.qrcode.email@@",
+                "type": "textfield",
+                "control_field": "type",
+                "control_value": "KddiAu",
+                "control_use_regex": "true"
+            },
+            {
+                "name": "telephone",
+                "label": "@@report.qrcode.telephone@@",
+                "type": "textfield",
+                "control_field": "type",
+                "control_value": "Telephone",
+                "control_use_regex": "true"
+            },
+            {
+                "name": "telephone1",
+                "label": "@@report.qrcode.telephone@@",
+                "type": "textfield",
+                "control_field": "type",
+                "control_value": "KddiAu|MeCard|VCard",
+                "control_use_regex": "true"
+            },
+            {
+                "name": "telephone2",
+                "label": "@@report.qrcode.telephone@@",
+                "type": "textfield",
+                "control_field": "type",
+                "control_value": "KddiAu",
+                "control_use_regex": "true"
+            },
+            {
+                "name": "telephone3",
+                "label": "@@report.qrcode.telephone@@",
+                "type": "textfield",
+                "control_field": "type",
+                "control_value": "KddiAu",
+                "control_use_regex": "true"
+            },
+            {
+                "name": "number",
+                "label": "@@report.qrcode.number@@",
+                "type": "textfield",
+                "required": "true",
+                "control_field": "type",
+                "control_value": "MMS|SMS",
+                "control_use_regex": "true"
+            },
+            {
+                "name": "subject",
+                "label": "@@report.qrcode.subject@@",
+                "type": "textfield",
+                "control_field": "type",
+                "control_value": "MMS|SMS",
+                "control_use_regex": "true"
+            },
+            {
+                "name": "title",
+                "label": "@@report.qrcode.title@@",
+                "type": "textfield",
+                "control_field": "type",
+                "control_value": "Bookmark|VCard",
+                "control_use_regex": "true"
+            },
+            {
+                "name": "company",
+                "label": "@@report.qrcode.company@@",
+                "type": "textfield",
+                "control_field": "type",
+                "control_value": "VCard",
+                "control_use_regex": "true"
+            },
+            {
+                "name": "website",
+                "label": "@@report.qrcode.website@@",
+                "type": "textfield",
+                "control_field": "type",
+                "control_value": "VCard",
+                "control_use_regex": "true"
+            },
+            {
+                "name": "note",
+                "label": "@@report.qrcode.note@@",
+                "type": "textfield",
+                "control_field": "type",
+                "control_value": "VCard",
+                "control_use_regex": "true"
+            },
+            {
+                "name": "ssid",
+                "label": "@@report.qrcode.ssid@@",
+                "type": "textfield",
+                "required": "true",
+                "control_field": "type",
+                "control_value": "Wifi",
+                "control_use_regex": "false"
+            },
+            {
+                "name": "authentication",
+                "label": "@@report.qrcode.authentication@@",
+                "type": "selectbox",
+                "value": "nopass",
+                "options": [
+                    {
+                        "value": "nopass",
+                        "label": "@@report.qrcode.authentication.nopass@@"
+                    },
+                    {
+                        "value": "WEP",
+                        "label": "@@report.qrcode.authentication.WEP@@"
+                    },
+                    {
+                        "value": "WPA",
+                        "label": "@@report.qrcode.authentication.WPA@@"
+                    }
+                ],
+                "control_field": "type",
+                "control_value": "Wifi",
+                "control_use_regex": "false"
+            },
+            {
+                "name": "password",
+                "label": "@@report.qrcode.password@@",
+                "type": "password",
+                "control_field": "type",
+                "control_value": "Wifi",
+                "control_use_regex": "false"
+            },
+            {
+                "name": "hidden",
+                "label": "@@report.qrcode.hidden@@",
+                "type": "checkbox",
+                "value": "",
+                "options": [
+                    {
+                        "value": "true",
+                        "label": ""
+                    }
+                ],
+                "control_field": "type",
+                "control_value": "Wifi",
+                "control_use_regex": "false"
+            },
+            {
+                "name": "height",
+                "label": "@@report.height@@",
+                "type": "textfield"
+            },
+            {
+                "name": "halign",
+                "label": "@@report.align@@",
+                "type": "radio",
+                "value": "Left",
+                "options": [
+                    {
+                        "value": "Left",
+                        "label": "@@report.align.left@@"
+                    },
+                    {
+                        "value": "Center",
+                        "label": "@@report.align.center@@"
+                    },
+                    {
+                        "value": "Right",
+                        "label": "@@report.align.right@@"
+                    }
+                ]
+            },
+            {
+                "name": "marginBottom",
+                "label": "@@report.marginBottom@@",
+                "type": "textfield",
+                "value" : "10px"
+            }
+        ]
+    }
+]
+

@@ -1,0 +1,51 @@
+[
+    {
+        "title": "@@report.hline.edit@@",
+        "properties": [
+            {
+                "name": "id",
+                "label": "ID",
+                "type": "hidden"
+            },
+            {
+                "name": "size",
+                "label": "@@report.size@@",
+                "type": "textfield",
+                "value": "2px",
+                "required": "true"
+            },
+            {
+                "name": "color",
+                "label": "@@report.color@@",
+                "type": "color",
+                "value": "#000000",
+                "required": "true"
+            },
+            {
+                "name": "style",
+                "label": "@@report.style@@",
+                "type": "radio",
+                "value": "solid",
+                "options": [
+                    {
+                        "value": "solid",
+                        "label": "@@report.style.solid@@"
+                    },
+                    {
+                        "value": "dashed",
+                        "label": "@@report.style.dashed@@"
+                    },
+                    {
+                        "value": "dotted",
+                        "label": "@@report.style.dotted@@"
+                    },
+                    {
+                        "value": "double",
+                        "label": "@@report.style.double@@"
+                    }
+                ]
+            }
+        ]
+    }
+]
+

@@ -1,0 +1,70 @@
+[
+    {
+        "title": "@@reportMenu.edit@@",
+        "properties": [
+            {
+                "name": "id",
+                "label": "Id",
+                "type": "hidden"
+            },
+            {
+                "name": "customId",
+                "label": "@@userview.htmlpage.customId@@",
+                "type": "textfield",
+                "regex_validation": "^[a-zA-Z0-9_]+$",
+                "validation_message": "@@userview.htmlpage.invalidId@@"
+            },
+            {
+                "name": "label",
+                "label": "@@userview.htmlpage.label@@",
+                "type": "textfield",
+                "required": "True",
+                "value": "@@reportMenu.report@@"
+            },
+            {
+                "name": "reportId",
+                "label": "@@reportMenu.report@@",
+                "type": "selectbox",
+                "required": "True",
+                "options_ajax": "[CONTEXT_PATH]/web/json/console/app[APP_PATH]/cbuilder/report/options"
+            },
+            {
+                "name": "reportParams",
+                "label": "@@report.subreport.reportParams@@",
+                "type": "grid",
+                "columns": [
+                    {
+                        "key": "param",
+                        "label": "@@report.subreport.paramName@@",
+                        "required": "True"
+                    },
+                    {
+                        "key": "value",
+                        "label": "@@report.subreport.paramValue@@"
+                    },
+                    {
+                        "key": "default",
+                        "label": "@@report.subreport.default@@"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "title": "@@userview.csvimportmenu.advanced@@",
+        "properties": [
+            {
+                "name": "customHeader",
+                "label": "@@userview.calendarMenu.customHeader@@",
+                "type": "codeeditor",
+                "mode" : "html"
+            },
+            {
+                "name": "customFooter",
+                "label": "@@userview.calendarMenu.customFooter@@",
+                "type": "codeeditor",
+                "mode" : "html"
+            }
+        ]
+    }
+]

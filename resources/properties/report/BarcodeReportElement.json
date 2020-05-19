@@ -1,0 +1,203 @@
+[
+    {
+        "title": "@@report.barcode.edit@@",
+        "properties": [
+            {
+                "name": "id",
+                "label": "ID",
+                "type": "hidden"
+            },
+            {
+                "name": "value",
+                "label": "@@report.value@@",
+                "type": "textfield",
+                "required": "true"
+            },
+            {
+                "name": "type",
+                "label": "@@report.barcode.type@@",
+                "type": "selectbox",
+                "value": "0",
+                "options": [
+                    {
+                        "value": "0",
+                        "label": "@@report.barcode.type.2_OF_7@@"
+                    },
+                    {
+                        "value": "1",
+                        "label": "@@report.barcode.type.3_OF_9@@"
+                    },
+                    {
+                        "value": "2",
+                        "label": "@@report.barcode.type.BOOKLAND@@"
+                    },
+                    {
+                        "value": "3",
+                        "label": "@@report.barcode.type.CODABAR@@"
+                    },
+                    {
+                        "value": "4",
+                        "label": "@@report.barcode.type.CODE_128@@"
+                    },
+                    {
+                        "value": "5",
+                        "label": "@@report.barcode.type.CODE_128A@@"
+                    },
+                    {
+                        "value": "6",
+                        "label": "@@report.barcode.type.CODE_128B@@"
+                    },
+                    {
+                        "value": "7",
+                        "label": "@@report.barcode.type.CODE_128C@@"
+                    },
+                    {
+                        "value": "8",
+                        "label": "@@report.barcode.type.CODE_39@@"
+                    },
+                    {
+                        "value": "9",
+                        "label": "@@report.barcode.type.EAN128@@"
+                    },
+                    {
+                        "value": "10",
+                        "label": "@@report.barcode.type.EAN13@@"
+                    },
+                    {
+                        "value": "11",
+                        "label": "@@report.barcode.type.GLOBAL_TRADE_IT_NUMBER@@"
+                    },
+                    {
+                        "value": "12",
+                        "label": "@@report.barcode.type.INT_2_OF_5@@"
+                    },
+                    {
+                        "value": "13",
+                        "label": "@@report.barcode.type.MONARCH@@"
+                    },
+                    {
+                        "value": "13",
+                        "label": "@@report.barcode.type.NW7@@"
+                    },
+                    {
+                        "value": "15",
+                        "label": "@@report.barcode.type.SCC14_SHIPPING_CODE@@"
+                    },
+                    {
+                        "value": "16",
+                        "label": "@@report.barcode.type.PDF417@@"
+                    },
+                    {
+                        "value": "17",
+                        "label": "@@report.barcode.type.SHIPMENT_IDENTIFICATION_NUMBER@@"
+                    },
+                    {
+                        "value": "18",
+                        "label": "@@report.barcode.type.UCCEAN128@@"
+                    },
+                    {
+                        "value": "19",
+                        "label": "@@report.barcode.type.STD_2_OF_5@@"
+                    },
+                    {
+                        "value": "20",
+                        "label": "@@report.barcode.type.UCCEAN128_00@@"
+                    },
+                    {
+                        "value": "21",
+                        "label": "@@report.barcode.type.UPCA@@"
+                    },
+                    {
+                        "value": "22",
+                        "label": "@@report.barcode.type.USD3@@"
+                    },
+                    {
+                        "value": "23",
+                        "label": "@@report.barcode.type.USD4@@"
+                    },
+                    {
+                        "value": "24",
+                        "label": "@@report.barcode.type.USPS@@"
+                    },
+                    {
+                        "value": "25",
+                        "label": "@@report.barcode.type.CODE_39_EXTENDED@@"
+                    }
+                ]
+            },
+            {
+                "name": "showText",
+                "label": "@@report.barcode.showText@@",
+                "type": "checkbox",
+                "value": "false",
+                "options": [
+                    {
+                        "value": "true",
+                        "label": ""
+                    }
+                ]
+            },
+            {
+                "name": "checkSum",
+                "label": "@@report.barcode.checkSum@@",
+                "type": "checkbox",
+                "value": "false",
+                "options": [
+                    {
+                        "value": "true",
+                        "label": ""
+                    }
+                ],
+                "control_field": "type",
+                "control_value": "25|22|20|19|18|12|1|8",
+                "control_use_regex": "true"
+            },
+            {
+                "name": "applicationIdentifier",
+                "label": "@@report.barcode.applicationIdentifier@@",
+                "type": "textfield",
+                "required": "true",
+                "control_field": "type",
+                "control_value": "18",
+                "control_use_regex": "false"
+            },
+            {
+                "name": "width",
+                "label": "@@report.width@@",
+                "type": "textfield"
+            },
+            {
+                "name": "height",
+                "label": "@@report.height@@",
+                "type": "textfield"
+            },
+            {
+                "name": "halign",
+                "label": "@@report.align@@",
+                "type": "radio",
+                "value": "left",
+                "options": [
+                    {
+                        "value": "left",
+                        "label": "@@report.align.left@@"
+                    },
+                    {
+                        "value": "center",
+                        "label": "@@report.align.center@@"
+                    },
+                    {
+                        "value": "right",
+                        "label": "@@report.align.right@@"
+                    }
+                ]
+            },
+            {
+                "name": "marginBottom",
+                "label": "@@report.marginBottom@@",
+                "type": "textfield",
+                "value" : "10px"
+            }
+        ]
+    }
+]
+

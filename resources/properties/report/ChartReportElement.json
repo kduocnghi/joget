@@ -1,0 +1,469 @@
+[
+    {
+        "title":"@@report.chart.edit@@",
+        "properties":[
+            {
+                "name": "id",
+                "label": "Id",
+                "type": "hidden"
+            },
+            {
+                "name":"chartType",
+                "label":"@@userview.sqlchartmenu.chartType@@",
+                "type":"selectbox",
+                "options":[
+                    {
+                        "value":"area",
+                        "label":"@@userview.sqlchartmenu.areaChart@@"
+                    },
+                    {
+                        "value":"bar",
+                        "label":"@@userview.sqlchartmenu.barChart@@"
+                    },
+                    {
+                        "value":"bubble",
+                        "label":"@@userview.sqlchartmenu.bubbleChart@@"
+                    },
+                    {
+                        "value":"candlestick",
+                        "label":"@@userview.sqlchartmenu.candlestickChart@@"
+                    },
+                    {
+                        "value":"donut",
+                        "label":"@@userview.sqlchartmenu.donutChart@@"
+                    },
+                    {
+                        "value":"ohlc",
+                        "label":"@@userview.sqlchartmenu.ohlcChart@@"
+                    },
+                    {
+                        "value":"pie",
+                        "label":"@@userview.sqlchartmenu.pieChart@@"
+                    },
+                    {
+                        "value":"xy",
+                        "label":"@@userview.sqlchartmenu.xyChart@@"
+                    }
+                ],
+                "required":"True"
+            },
+            {
+                "name": "title",
+                "label": "@@userview.sqlchartmenu.chartTitle@@",
+                "type": "textfield"
+            },
+            {
+                "name": "binder",
+                "label": "@@userview.sqlchartmenu.binder@@",
+                "type": "elementselect",
+                "required": "True",
+                "options_ajax": "[CONTEXT_PATH]/web/property/json/getElements?classname=org.joget.apps.datalist.model.DataListBinderDefault",
+                "url": "[CONTEXT_PATH]/web/property/json[APP_PATH]/getPropertyOptions"
+            }
+        ]
+    },
+    {
+        "title":"@@userview.sqlchartmenu.binderDataMapping@@",
+        "properties":[
+            {
+                "name": "sortingOrderByColumn",
+                "label": "@@dbuilder.orderBy@@",
+                "type": "selectbox",
+                "options_ajax_on_change": "id:binder.className;binderId:binder.className;binderJson:binder.properties",
+                "options_ajax": "[CONTEXT_PATH]/web/json/console/app[APP_PATH]/builder/binder/columns",
+                "options_ajax_mapping": {"arrayObj": "columns", "value": "name", "label": "label", "addEmpty": true},
+                "options_ajax_method": "POST"
+            },
+            {
+                "name": "sortingOrder",
+                "label": "@@dbuilder.order@@",
+                "type": "selectbox",
+                "options": [
+                    {"label": "@@dbuilder.order.asc@@", "value": "ASC"},
+                    {"label": "@@dbuilder.order.desc@@", "value": "DESC"}
+                ]
+            },
+            {
+                "name": "mapping_x",
+                "label": "@@userview.sqlchartmenu.mapping.x-axis@@",
+                "type": "selectbox",
+                "options_ajax_on_change": "id:binder.className;binderId:binder.className;binderJson:binder.properties",
+                "options_ajax": "[CONTEXT_PATH]/web/json/console/app[APP_PATH]/builder/binder/columns",
+                "options_ajax_mapping": {"arrayObj": "columns", "value": "name", "label": "label", "addEmpty": true},
+                "options_ajax_method": "POST",
+                "control_field": "chartType",
+                "control_value": "bar|xy|area|bubble|line",
+                "control_use_regex": "true",
+                "required": "true"
+            },
+            {
+                "name": "mapping_ys",
+                "label": "@@userview.sqlchartmenu.mapping.y-axis.values@@",
+                "type": "grid",
+                "columns": [{
+                    "key": "y",
+                    "label": "@@userview.sqlchartmenu.mapping.value@@",
+                    "options_ajax_on_change": "id:binder.className;binderId:binder.className;binderJson:binder.properties",
+                    "options_ajax": "[CONTEXT_PATH]/web/json/console/app[APP_PATH]/builder/binder/columns",
+                    "options_ajax_mapping": {"arrayObj": "columns", "value": "name", "label": "label", "addEmpty": true},
+                    "options_ajax_method": "POST",
+                    "required": "True"
+                },
+                {
+                    "key": "legend",
+                    "label": "@@userview.sqlchartmenu.mapping.legend@@",
+                    "required": "True"
+                }],
+                "control_field": "chartType",
+                "control_value": "bar|xy|area|line",
+                "control_use_regex": "true",
+                "required": "true"
+            },
+            {
+                "name": "mapping_legend",
+                "label": "@@userview.sqlchartmenu.mapping.legend@@",
+                "type": "selectbox",
+                "options_ajax_on_change": "id:binder.className;binderId:binder.className;binderJson:binder.properties",
+                "options_ajax": "[CONTEXT_PATH]/web/json/console/app[APP_PATH]/builder/binder/columns",
+                "options_ajax_mapping": {"arrayObj": "columns", "value": "name", "label": "label", "addEmpty": true},
+                "options_ajax_method": "POST",
+                "control_field": "chartType",
+                "control_value": "pie|donut",
+                "control_use_regex": "true",
+                "required": "true"
+            },
+            {
+                "name": "mapping_value",
+                "label": "@@userview.sqlchartmenu.mapping.value@@",
+                "type": "selectbox",
+                "options_ajax_on_change": "id:binder.className;binderId:binder.className;binderJson:binder.properties",
+                "options_ajax": "[CONTEXT_PATH]/web/json/console/app[APP_PATH]/builder/binder/columns",
+                "options_ajax_mapping": {"arrayObj": "columns", "value": "name", "label": "label", "addEmpty": true},
+                "options_ajax_method": "POST",
+                "control_field": "chartType",
+                "control_value": "pie|donut",
+                "control_use_regex": "false",
+                "required": "true"
+            },
+            {
+                "name": "mapping_y",
+                "label": "@@userview.sqlchartmenu.mapping.y-axis@@",
+                "type": "selectbox",
+                "options_ajax_on_change": "id:binder.className;binderId:binder.className;binderJson:binder.properties",
+                "options_ajax": "[CONTEXT_PATH]/web/json/console/app[APP_PATH]/builder/binder/columns",
+                "options_ajax_mapping": {"arrayObj": "columns", "value": "name", "label": "label", "addEmpty": true},
+                "options_ajax_method": "POST",
+                "control_field": "chartType",
+                "control_value": "bubble",
+                "control_use_regex": "false",
+                "required": "true"
+            },
+            {
+                "name": "mapping_r",
+                "label": "@@userview.sqlchartmenu.mapping.radius@@",
+                "type": "selectbox",
+                "options_ajax_on_change": "id:binder.className;binderId:binder.className;binderJson:binder.properties",
+                "options_ajax": "[CONTEXT_PATH]/web/json/console/app[APP_PATH]/builder/binder/columns",
+                "options_ajax_mapping": {"arrayObj": "columns", "value": "name", "label": "label", "addEmpty": true},
+                "options_ajax_method": "POST",
+                "control_field": "chartType",
+                "control_value": "bubble",
+                "control_use_regex": "false",
+                "required": "true"
+            },
+            {
+                "name": "mapping_label",
+                "label": "@@userview.sqlchartmenu.mapping.label@@",
+                "type": "selectbox",
+                "options_ajax_on_change": "id:binder.className;binderId:binder.className;binderJson:binder.properties",
+                "options_ajax": "[CONTEXT_PATH]/web/json/console/app[APP_PATH]/builder/binder/columns",
+                "options_ajax_mapping": {"arrayObj": "columns", "value": "name", "label": "label", "addEmpty": true},
+                "options_ajax_method": "POST",
+                "control_field": "chartType",
+                "control_value": "bubble",
+                "control_use_regex": "false",
+                "required": "true"
+            },
+            {
+                "name": "mapping_date",
+                "label": "@@userview.sqlchartmenu.mapping.date@@",
+                "type": "selectbox",
+                "options_ajax_on_change": "id:binder.className;binderId:binder.className;binderJson:binder.properties",
+                "options_ajax": "[CONTEXT_PATH]/web/json/console/app[APP_PATH]/builder/binder/columns",
+                "options_ajax_mapping": {"arrayObj": "columns", "value": "name", "label": "label", "addEmpty": true},
+                "options_ajax_method": "POST",
+                "control_field": "chartType",
+                "control_value": "candlestick|ohlc",
+                "control_use_regex": "true",
+                "required": "true"
+            },
+            {
+                "name": "mapping_dateformat",
+                "label": "@@report.chart.dateDataFormat@@",
+                "type": "textfield",
+                "value": "yyyy-MM-dd",
+                "required": "true",
+                "control_field": "chartType",
+                "control_value": "bar|xy|area|candlestick|ohlc",
+                "control_use_regex": "true"
+            },
+            {
+                "name": "mapping_open",
+                "label": "@@userview.sqlchartmenu.mapping.open@@",
+                "type": "selectbox",
+                "options_ajax_on_change": "id:binder.className;binderId:binder.className;binderJson:binder.properties",
+                "options_ajax": "[CONTEXT_PATH]/web/json/console/app[APP_PATH]/builder/binder/columns",
+                "options_ajax_mapping": {"arrayObj": "columns", "value": "name", "label": "label", "addEmpty": true},
+                "options_ajax_method": "POST",
+                "control_field": "chartType",
+                "control_value": "candlestick|ohlc",
+                "control_use_regex": "true",
+                "required": "true"
+            },
+            {
+                "name": "mapping_high",
+                "label": "@@userview.sqlchartmenu.mapping.high@@",
+                "type": "selectbox",
+                "options_ajax_on_change": "id:binder.className;binderId:binder.className;binderJson:binder.properties",
+                "options_ajax": "[CONTEXT_PATH]/web/json/console/app[APP_PATH]/builder/binder/columns",
+                "options_ajax_mapping": {"arrayObj": "columns", "value": "name", "label": "label", "addEmpty": true},
+                "options_ajax_method": "POST",
+                "control_field": "chartType",
+                "control_value": "candlestick|ohlc",
+                "control_use_regex": "true",
+                "required": "true"
+            },
+            {
+                "name": "mapping_low",
+                "label": "@@userview.sqlchartmenu.mapping.low@@",
+                "type": "selectbox",
+                "options_ajax_on_change": "id:binder.className;binderId:binder.className;binderJson:binder.properties",
+                "options_ajax": "[CONTEXT_PATH]/web/json/console/app[APP_PATH]/builder/binder/columns",
+                "options_ajax_mapping": {"arrayObj": "columns", "value": "name", "label": "label", "addEmpty": true},
+                "options_ajax_method": "POST",
+                "control_field": "chartType",
+                "control_value": "candlestick|ohlc",
+                "control_use_regex": "true",
+                "required": "true"
+            },
+            {
+                "name": "mapping_close",
+                "label": "@@userview.sqlchartmenu.mapping.close@@",
+                "type": "selectbox",
+                "options_ajax_on_change": "id:binder.className;binderId:binder.className;binderJson:binder.properties",
+                "options_ajax": "[CONTEXT_PATH]/web/json/console/app[APP_PATH]/builder/binder/columns",
+                "options_ajax_mapping": {"arrayObj": "columns", "value": "name", "label": "label", "addEmpty": true},
+                "options_ajax_method": "POST",
+                "control_field": "chartType",
+                "control_value": "candlestick|ohlc",
+                "control_use_regex": "true",
+                "required": "true"
+            }
+        ],
+        "control_field": "datasource",
+        "control_value": "binder",
+        "control_use_regex": "false"
+    },
+    {
+        "title":"@@userview.sqlchartmenu.chartOptions@@",
+        "properties":[
+            {
+                "name": "categoryAxisLabel",
+                "label": "@@userview.sqlchartmenu.x-axisLabel@@",
+                "type": "textfield",
+                "value": "@@userview.sqlchartmenu.category@@",
+                "control_field": "chartType",
+                "control_value": "bar|xy|area|bubble|line|candlestick|ohlc",
+                "control_use_regex": "true",
+                "required": "true"
+            },
+            {
+                "name": "xAxisDisplayAS",
+                "label": "@@userview.sqlchartmenu.xAxisDisplayAS@@",
+                "type": "selectbox",
+                "value": "",
+                "options":[
+                    {
+                        "value":"",
+                        "label":"@@userview.sqlchartmenu.xAxisDisplayAS.category@@"
+                    },
+                    {
+                        "value":"number",
+                        "label":"@@userview.sqlchartmenu.xAxisDisplayAS.number@@"
+                    },
+                    {
+                        "value":"date",
+                        "label":"@@userview.sqlchartmenu.xAxisDisplayAS.date@@"
+                    }
+                ],
+                "control_field": "chartType",
+                "control_value": "bar",
+                "control_use_regex": "true"
+            },
+            {
+                "name": "xAxisDisplayAS",
+                "label": "@@userview.sqlchartmenu.xAxisDisplayAS@@",
+                "type": "selectbox",
+                "value": "",
+                "options":[
+                    {
+                        "value":"",
+                        "label":"@@userview.sqlchartmenu.xAxisDisplayAS.category@@"
+                    },
+                    {
+                        "value":"number",
+                        "label":"@@userview.sqlchartmenu.xAxisDisplayAS.number@@"
+                    },
+                    {
+                        "value":"date",
+                        "label":"@@userview.sqlchartmenu.xAxisDisplayAS.date@@"
+                    }
+                ],
+                "control_field": "chartType",
+                "control_value": "bar|xy|area|line",
+                "control_use_regex": "true"
+            },
+            {
+                "name": "dateFormat",
+                "label": "@@userview.sqlchartmenu.dateFormat@@",
+                "type": "textfield",
+                "control_field": "chartType",
+                "control_value": "candlestick|ohlc",
+                "control_use_regex": "true"
+            },
+            {
+                "name": "dateFormat",
+                "label": "@@userview.sqlchartmenu.dateFormat@@",
+                "type": "textfield",
+                "control_field": "xAxisDisplayAS",
+                "control_value": "date",
+                "control_use_regex": "false"
+            },
+            {
+                "name": "valueAxisLabel",
+                "label": "@@userview.sqlchartmenu.y-axisLabel@@",
+                "type": "textfield",
+                "value": "@@userview.sqlchartmenu.value@@",
+                "control_field": "chartType",
+                "control_value": "bar|xy|area|bubble|line|candlestick|ohlc",
+                "control_use_regex": "true",
+                "required": "true"
+            },
+            {
+                "name": "yaxisPrefix",
+                "label": "@@userview.sqlchartmenu.yaxisPrefix@@",
+                "type": "textfield",
+                "control_field": "chartType",
+                "control_value": "bar|xy|area|line|candlestick|ohlc",
+                "control_use_regex": "true"
+            },
+            {
+                "name":"showValue",
+                "label":"@@userview.sqlchartmenu.showValue@@",
+                "type":"radio",
+                "options":[
+                    {
+                        "value":"",
+                        "label":"@@userview.sqlchartmenu.showValue.percentage@@"
+                    },
+                    {
+                        "value":"true",
+                        "label":"@@userview.sqlchartmenu.showValue.value@@"
+                    }
+                ],
+                "control_field": "chartType",
+                "control_value": "pie|donut",
+                "control_use_regex": "true"
+            },
+            {
+                "name":"showLegend",
+                "label":"@@userview.sqlchartmenu.showLegend@@",
+                "type":"checkbox",
+                "options":[
+                    {
+                        "value":"true",
+                        "label":""
+                    }
+                ],
+                "control_field": "chartType",
+                "control_value": "area|bar|donut|line|pie|xy",
+                "control_use_regex": "true",
+                "value":"true"
+            },
+            {
+                "name": "showValueLabel",
+                "label": "@@userview.sqlchartmenu.showValueLabel@@",
+                "type":"checkbox",
+                "options":[
+                    {
+                        "value":"true",
+                        "label":""
+                    }
+                ],
+                "value": "true",
+                "control_field": "chartType",
+                "control_value": "bar",
+                "control_use_regex": "true"
+            },
+            {
+                "name": "stack",
+                "label": "@@userview.sqlchartmenu.stack@@",
+                "type":"checkbox",
+                "options":[
+                    {
+                        "value":"true",
+                        "label":""
+                    }
+                ],
+                "control_field": "chartType",
+                "control_value": "bar",
+                "control_use_regex": "true"
+            },
+            {
+                "name": "chartWidth",
+                "label": "@@userview.sqlchartmenu.chartWidth@@ (px)",
+                "type": "textfield",
+                "value": "640",
+                "required": "true"
+            },
+            {
+                "name": "chartHeight",
+                "label": "@@userview.sqlchartmenu.chartHeight@@ (px)",
+                "type": "textfield",
+                "value": "480",
+                "required": "true"
+            },
+            {
+                "name": "colors",
+                "label": "@@userview.sqlchartmenu.colors@@",
+                "type": "textarea"
+            },
+            {
+                "name": "halign",
+                "label": "@@report.align@@",
+                "type": "radio",
+                "value": "left",
+                "options": [
+                    {
+                        "value": "left",
+                        "label": "@@report.align.left@@"
+                    },
+                    {
+                        "value": "center",
+                        "label": "@@report.align.center@@"
+                    },
+                    {
+                        "value": "right",
+                        "label": "@@report.align.right@@"
+                    }
+                ]
+            },
+            {
+                "name": "marginBottom",
+                "label": "@@report.marginBottom@@",
+                "type": "textfield",
+                "value" : "10px"
+            }
+        ]
+    }  
+]

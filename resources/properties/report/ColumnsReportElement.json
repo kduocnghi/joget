@@ -1,0 +1,60 @@
+[
+    {
+        "title": "@@report.columns.edit@@",
+        "properties": [
+            {
+                "name": "id",
+                "label": "ID",
+                "type": "hidden"
+            },
+            {
+                "name": "type",
+                "label": "@@report.type@@",
+                "type": "imageradio",
+                "value": "1",
+                "options": [
+                    {
+                        "value": "1",
+                        "label": "50% | 50%",
+                        "image": "[CONTEXT_PATH]/plugin/org.joget.plugin.report.ReportBuilder/img/col-1.png"
+                    },
+                    {
+                        "value": "2",
+                        "label": "30% | 70%",
+                        "image": "[CONTEXT_PATH]/plugin/org.joget.plugin.report.ReportBuilder/img/col-2.png"
+                    },
+                    {
+                        "value": "3",
+                        "label": "70% | 30%",
+                        "image": "[CONTEXT_PATH]/plugin/org.joget.plugin.report.ReportBuilder/img/col-3.png"
+                    },
+                    {
+                        "value": "4",
+                        "label": "33% | 33% | 33%",
+                        "image": "[CONTEXT_PATH]/plugin/org.joget.plugin.report.ReportBuilder/img/col-4.png"
+                    },
+                    {
+                        "value": "5",
+                        "label": "25% | 25% | 25% | 25%",
+                        "image": "[CONTEXT_PATH]/plugin/org.joget.plugin.report.ReportBuilder/img/col-5.png"
+                    }
+                ],
+                "required": "True"
+            },
+            {
+                "name": "gap",
+                "label": "@@report.columns.gap@@",
+                "type": "textfield",
+                "value": "1%",
+                "required": "True"
+            },
+            {
+                "name": "marginBottom",
+                "label": "@@report.marginBottom@@",
+                "type": "textfield",
+                "value" : "10px"
+            }
+        ]
+    }
+]
+

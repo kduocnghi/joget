@@ -1,0 +1,81 @@
+[
+    {
+        "title": "@@report.paging.edit@@",
+        "properties": [
+            {
+                "name": "id",
+                "label": "ID",
+                "type": "hidden"
+            },
+            {
+                "name": "syntax",
+                "label": "@@report.paging.syntax@@",
+                "type": "radio",
+                "value": "report.paging.syntax.currentpage",
+                "options": [
+                    {
+                        "value": "report.paging.syntax.currentpage",
+                        "label": "@@report.paging.syntax.currentpage@@"
+                    },
+                    {
+                        "value": "report.paging.syntax.slash",
+                        "label": "@@report.paging.syntax.slash@@"
+                    },
+                    {
+                        "value": "report.paging.syntax.xofy",
+                        "label": "@@report.paging.syntax.xofy@@"
+                    },
+                    {
+                        "value": "report.paging.syntax.pagexofy",
+                        "label": "@@report.paging.syntax.pagexofy@@"
+                    },
+                    {
+                        "value": "other",
+                        "label": "@@report.paging.syntax.other@@"
+                    }
+                ]
+            },
+            {
+                "name": "format",
+                "label": "@@report.paging.format@@",
+                "type": "textfield",
+                "value": "{CURRENT_PAGE}/{PAGE_NUMBER}",
+                "control_field": "syntax",
+                "control_value": "other",
+                "control_use_regex": "false",
+                "required": "true"
+            },
+            {
+                "name": "size",
+                "label": "@@report.size@@",
+                "type": "textfield"
+            },
+            {
+                "name": "align",
+                "label": "@@report.align@@",
+                "type": "radio",
+                "value": "right",
+                "options": [
+                    {
+                        "value": "left",
+                        "label": "@@report.align.left@@"
+                    },
+                    {
+                        "value": "center",
+                        "label": "@@report.align.center@@"
+                    },
+                    {
+                        "value": "right",
+                        "label": "@@report.align.right@@"
+                    }
+                ]
+            },
+            {
+                "name": "color",
+                "label": "@@report.color@@",
+                "type": "color"
+            }
+        ]
+    }
+]
+

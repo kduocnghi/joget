@@ -1,0 +1,221 @@
+[
+    {
+        "title": "@@report.list.edit@@",
+        "properties": [
+            {
+                "name": "id",
+                "label": "ID",
+                "type": "hidden"
+            },
+            {
+                "name": "datalistId",
+                "label": "@@userview.datalistmenu.listId@@",
+                "type": "selectbox",
+                "required": "True",
+                "options_ajax": "[CONTEXT_PATH]/web/json/console/app[APP_PATH]/datalist/options"
+            },
+            {
+                "name": "headerColor",
+                "label": "@@report.list.headerColor@@",
+                "type": "color"
+            },
+            {
+                "name": "headerTextColor",
+                "label": "@@report.list.headerTextColor@@",
+                "type": "color"
+            }
+        ]
+    },	
+    {
+        "title": "@@form.listgrid.advanced@@",
+        "properties": [
+            {
+                "name": "filterParams",
+                "label": "@@report.list.filterParams@@",
+                "type": "grid",
+                "columns": [
+                    {
+                        "key": "param",
+                        "label": "@@report.list.filterParamName@@",
+                        "required": "True"
+                    },
+                    {
+                        "key": "value",
+                        "label": "@@report.list.filterParamValue@@"
+                    }
+                ]
+            },
+            {
+                "name": "formulaColumns",
+                "label": "@@report.list.formulaColumns@@",
+                "description": "@@report.list.formulaColumns.desc@@",
+                "type": "grid",
+                "columns": [
+                    {
+                        "key": "label",
+                        "label": "@@report.list.formulaColumns.label@@",
+                        "required": "True"
+                    },
+                    {
+                        "key": "formula",
+                        "label": "@@report.list.formulaColumns.formula@@",
+                        "required": "True"
+                    },
+                    {
+                        "key": "footer",
+                        "label": "@@report.list.footer@@",
+                        "options": [
+                            {
+                                "value": "",
+                                "label": ""
+                            },
+                            {
+                                "value": "Sum",
+                                "label": "@@report.list.calculation.Sum@@"
+                            },
+                            {
+                                "value": "Average",
+                                "label": "@@report.list.calculation.Average@@"
+                            },
+                            {
+                                "value": "Count",
+                                "label": "@@report.list.calculation.Count@@"
+                            },
+                            {
+                                "value": "DistinctCount",
+                                "label": "@@report.list.calculation.DistinctCount@@"
+                            },
+                            {
+                                "value": "First",
+                                "label": "@@report.list.calculation.First@@"
+                            },
+                            {
+                                "value": "Highest",
+                                "label": "@@report.list.calculation.Highest@@"
+                            },
+                            {
+                                "value": "Lowest",
+                                "label": "@@report.list.calculation.Lowest@@"
+                            },
+                            {
+                                "value": "StandardDeviation",
+                                "label": "@@report.list.calculation.StandardDeviation@@"
+                            },
+                            {
+                                "value": "Variance",
+                                "label": "@@report.list.calculation.Variance@@"
+                            }
+                        ]
+                    },
+                    {
+                        "key": "numberFormat",
+                        "label": "@@report.list.numberFormat@@"
+                    },
+                    {
+                        "key": "headerAlignment",
+                        "label": "@@dbuilder.headerAlignment@@",
+                        "options": [
+                            {
+                                "value": "dataListAlignLeft",
+                                "label": "@@report.align.left@@"
+                            },
+                            {
+                                "value": "dataListAlignCenter",
+                                "label": "@@report.align.center@@"
+                            },
+                            {
+                                "value": "dataListAlignRigth",
+                                "label": "@@report.align.right@@"
+                            }
+                        ]
+                    },
+                    {
+                        "key": "alignment",
+                        "label": "@@report.align@@",
+                        "options": [
+                            {
+                                "value": "dataListAlignLeft",
+                                "label": "@@report.align.left@@"
+                            },
+                            {
+                                "value": "dataListAlignCenter",
+                                "label": "@@report.align.center@@"
+                            },
+                            {
+                                "value": "dataListAlignRigth",
+                                "label": "@@report.align.right@@"
+                            }
+                        ]
+                    },
+                    {
+                        "key": "width",
+                        "label": "@@report.list.formulaColumns.width@@"
+                    }
+                ]
+            },
+            {
+                "name": "footer",
+                "label": "@@report.list.footer@@",
+                "type": "grid",
+                "columns": [
+                    {
+                        "key": "fieldid",
+                        "label": "@@report.list.footer.fieldid@@",
+                        "required": "True"
+                    },
+                    {
+                        "key": "operator",
+                        "label": "@@report.list.footer.operator@@",
+                        "options": [
+                            {
+                                "value": "Sum",
+                                "label": "@@report.list.calculation.Sum@@"
+                            },
+                            {
+                                "value": "Average",
+                                "label": "@@report.list.calculation.Average@@"
+                            },
+                            {
+                                "value": "Count",
+                                "label": "@@report.list.calculation.Count@@"
+                            },
+                            {
+                                "value": "DistinctCount",
+                                "label": "@@report.list.calculation.DistinctCount@@"
+                            },
+                            {
+                                "value": "First",
+                                "label": "@@report.list.calculation.First@@"
+                            },
+                            {
+                                "value": "Highest",
+                                "label": "@@report.list.calculation.Highest@@"
+                            },
+                            {
+                                "value": "Lowest",
+                                "label": "@@report.list.calculation.Lowest@@"
+                            },
+                            {
+                                "value": "StandardDeviation",
+                                "label": "@@report.list.calculation.StandardDeviation@@"
+                            },
+                            {
+                                "value": "Variance",
+                                "label": "@@report.list.calculation.Variance@@"
+                            }
+                        ]
+                    },
+                    {
+                        "key": "numberFormat",
+                        "label": "@@report.list.numberFormat@@"
+                    }
+                ]
+            },
+            {
+                "name": "footerRowlabel",
+                "label": "@@report.list.footerRowlabel@@",
+                "type": "textfield"
+            }
+        ]
+    }
+]

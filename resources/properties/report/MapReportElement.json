@@ -1,0 +1,319 @@
+[
+    {
+        "title": "@@report.map.edit@@",
+        "properties": [
+            {
+                "name": "id",
+                "label": "ID",
+                "type": "hidden"
+            },
+            {
+                "name": "latitude",
+                "label": "@@report.qrcode.latitude@@",
+                "type": "textfield",
+                "required": "true"
+            },
+            {
+                "name": "longitude",
+                "label": "@@report.qrcode.longitude@@",
+                "type": "textfield",
+                "required": "true"
+            },
+            {
+                "name": "type",
+                "label": "@@report.barcode.type@@",
+                "type": "selectbox",
+                "value": "roadmap",
+                "options": [
+                    {
+                        "value": "roadmap",
+                        "label": "@@report.map.type.roadmap@@"
+                    },
+                    {
+                        "value": "satellite",
+                        "label": "@@report.map.type.satellite@@"
+                    },
+                    {
+                        "value": "terrain",
+                        "label": "@@report.map.type.terrain@@"
+                    },
+                    {
+                        "value": "hybrid",
+                        "label": "@@report.map.type.hybrid@@"
+                    }
+                ]
+            },
+            {
+                "name": "zoom",
+                "label": "@@report.map.zoom@@",
+                "type": "selectbox",
+                "options": [
+                    {
+                        "value": "5",
+                        "label": "5"
+                    },
+                    {
+                        "value": "6",
+                        "label": "6"
+                    },
+                    {
+                        "value": "7",
+                        "label": "7"
+                    },
+                    {
+                        "value": "8",
+                        "label": "8"
+                    },
+                    {
+                        "value": "9",
+                        "label": "9"
+                    },
+                    {
+                        "value": "10",
+                        "label": "10"
+                    },
+                    {
+                        "value": "11",
+                        "label": "11"
+                    },
+                    {
+                        "value": "12",
+                        "label": "12"
+                    },
+                    {
+                        "value": "13",
+                        "label": "13"
+                    },
+                    {
+                        "value": "14",
+                        "label": "14"
+                    },
+                    {
+                        "value": "15",
+                        "label": "15"
+                    },
+                    {
+                        "value": "16",
+                        "label": "16"
+                    },
+                    {
+                        "value": "17",
+                        "label": "17"
+                    },
+                    {
+                        "value": "18",
+                        "label": "18"
+                    }
+                ]
+            },
+            {
+                "name": "markersType",
+                "label": "@@report.map.markersType@@",
+                "type": "selectbox",
+                "value": "static",
+                "options": [
+                    {
+                        "value": "static",
+                        "label": "@@report.map.markersType.static@@"
+                    },
+                    {
+                        "value": "binder",
+                        "label": "@@report.map.markersType.binder@@"
+                    }
+                ]
+            },
+            {
+                "name": "markers",
+                "label": "@@report.map.markers@@",
+                "type": "grid",
+                "columns": [
+                    {
+                        "key": "color",
+                        "label": "@@report.map.markers.color@@",
+                        "options": [
+                            {
+                                "value": "red",
+                                "label": "@@report.map.markers.color.red@@"
+                            },
+                            {
+                                "value": "orange",
+                                "label": "@@report.map.markers.color.orange@@"
+                            },
+                            {
+                                "value": "yellow",
+                                "label": "@@report.map.markers.color.yellow@@"
+                            },
+                            {
+                                "value": "green",
+                                "label": "@@report.map.markers.color.green@@"
+                            },
+                            {
+                                "value": "blue",
+                                "label": "@@report.map.markers.color.blue@@"
+                            },
+                            {
+                                "value": "purple",
+                                "label": "@@report.map.markers.color.purple@@"
+                            },
+                            {
+                                "value": "brown",
+                                "label": "@@report.map.markers.color.brown@@"
+                            },
+                            {
+                                "value": "black",
+                                "label": "@@report.map.markers.color.black@@"
+                            },
+                            {
+                                "value": "gray",
+                                "label": "@@report.map.markers.color.gray@@"
+                            },
+                            {
+                                "value": "white",
+                                "label": "@@report.map.markers.color.white@@"
+                            }
+                        ]
+                    },
+                    {
+                        "key": "label",
+                        "label": "@@form.selectbox.label@@"
+                    },
+                    {
+                        "key": "latitude",
+                        "label": "@@report.qrcode.latitude@@",
+                        "required": "true"
+                    },
+                    {
+                        "key": "longitude",
+                        "label": "@@report.qrcode.longitude@@",
+                        "required": "true"
+                    }
+                ],
+                "control_field": "markersType",
+                "control_value": "static",
+                "control_use_regex": "false"
+            },
+            {
+                "name": "binder",
+                "label": "@@userview.sqlchartmenu.binder@@",
+                "type": "elementselect",
+                "required": "True",
+                "options_ajax": "[CONTEXT_PATH]/web/property/json/getElements?classname=org.joget.apps.datalist.model.DataListBinderDefault",
+                "url": "[CONTEXT_PATH]/web/property/json[APP_PATH]/getPropertyOptions",
+                "control_field": "markersType",
+                "control_value": "binder",
+                "control_use_regex": "false"
+            },
+            {
+                "name": "apikey",
+                "label": "@@report.map.apikey@@",
+                "type": "textfield",
+                "required": "true"
+            },
+            {
+                "name": "width",
+                "label": "@@report.width@@ (px)",
+                "type": "textfield",
+                "value" : "640"
+            },
+            {
+                "name": "height",
+                "label": "@@report.height@@ (px)",
+                "type": "textfield",
+                "value" : "480"
+            },
+            {
+                "name": "halign",
+                "label": "@@report.align@@",
+                "type": "radio",
+                "value": "left",
+                "options": [
+                    {
+                        "value": "left",
+                        "label": "@@report.align.left@@"
+                    },
+                    {
+                        "value": "center",
+                        "label": "@@report.align.center@@"
+                    },
+                    {
+                        "value": "right",
+                        "label": "@@report.align.right@@"
+                    }
+                ]
+            },
+            {
+                "name": "marginBottom",
+                "label": "@@report.marginBottom@@",
+                "type": "textfield",
+                "value" : "10px"
+            }
+        ]
+    },
+    {
+        "title": "@@report.map.datamapping@@",
+        "properties": [
+            {
+                "name": "mapping_color",
+                "label": "@@report.map.markers.mapping.color@@",
+                "type": "selectbox",
+                "options_ajax_on_change": "id:binder.className;binderId:binder.className;binderJson:binder.properties",
+                "options_ajax": "[CONTEXT_PATH]/web/json/console/app[APP_PATH]/builder/binder/columns",
+                "options_ajax_mapping": {
+                    "arrayObj": "columns",
+                    "value": "name",
+                    "label": "label",
+                    "addEmpty": true
+                },
+                "options_ajax_method": "POST"
+            },
+            {
+                "name": "mapping_label",
+                "label": "@@report.map.markers.mapping.label@@",
+                "type": "selectbox",
+                "options_ajax_on_change": "id:binder.className;binderId:binder.className;binderJson:binder.properties",
+                "options_ajax": "[CONTEXT_PATH]/web/json/console/app[APP_PATH]/builder/binder/columns",
+                "options_ajax_mapping": {
+                    "arrayObj": "columns",
+                    "value": "name",
+                    "label": "label",
+                    "addEmpty": true
+                },
+                "options_ajax_method": "POST"
+            },
+            {
+                "name": "mapping_latitude",
+                "label": "@@report.map.markers.mapping.latitude@@",
+                "type": "selectbox",
+                "options_ajax_on_change": "id:binder.className;binderId:binder.className;binderJson:binder.properties",
+                "options_ajax": "[CONTEXT_PATH]/web/json/console/app[APP_PATH]/builder/binder/columns",
+                "options_ajax_mapping": {
+                    "arrayObj": "columns",
+                    "value": "name",
+                    "label": "label",
+                    "addEmpty": true
+                },
+                "options_ajax_method": "POST",
+                "required": "true"
+            },
+            {
+                "name": "mapping_longitude",
+                "label": "@@report.map.markers.mapping.longitude@@",
+                "type": "selectbox",
+                "options_ajax_on_change": "id:binder.className;binderId:binder.className;binderJson:binder.properties",
+                "options_ajax": "[CONTEXT_PATH]/web/json/console/app[APP_PATH]/builder/binder/columns",
+                "options_ajax_mapping": {
+                    "arrayObj": "columns",
+                    "value": "name",
+                    "label": "label",
+                    "addEmpty": true
+                },
+                "options_ajax_method": "POST",
+                "required": "true"
+            }
+        ],
+        "control_field": "markersType",
+        "control_value": "binder",
+        "control_use_regex": "false"
+    }
+]
+

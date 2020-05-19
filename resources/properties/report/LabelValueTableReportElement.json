@@ -1,0 +1,329 @@
+[
+    {
+        "title": "@@report.labelvalue.edit@@",
+        "properties": [
+            {
+                "name": "id",
+                "label": "ID",
+                "type": "hidden"
+            },
+            {
+                "name": "type",
+                "label": "@@report.type@@",
+                "type": "selectbox",
+                "value": "static",
+                "options": [
+                    {
+                        "value": "static",
+                        "label": "@@report.map.markersType.static@@"
+                    },
+                    {
+                        "value": "binder",
+                        "label": "@@report.map.markersType.binder@@"
+                    }
+                ]
+            },
+            {
+                "name": "label_value",
+                "label": "@@report.labelvalue.label_value@@",
+                "type": "grid",
+                "columns": [
+                    {
+                        "key": "label",
+                        "label": "@@form.selectbox.label@@"
+                    },
+                    {
+                        "key": "value",
+                        "label": "@@report.value@@"
+                    }
+                ],
+                "control_field": "type",
+                "control_value": "static",
+                "control_use_regex": "false"
+            },
+            {
+                "name": "binder",
+                "label": "@@userview.sqlchartmenu.binder@@",
+                "type": "elementselect",
+                "required": "True",
+                "options_ajax": "[CONTEXT_PATH]/web/property/json/getElements?classname=org.joget.apps.datalist.model.DataListBinderDefault",
+                "url": "[CONTEXT_PATH]/web/property/json[APP_PATH]/getPropertyOptions",
+                "control_field": "type",
+                "control_value": "binder",
+                "control_use_regex": "false"
+            }
+        ]
+    },
+    {
+        "title": "@@report.map.datamapping@@",
+        "properties": [
+            {
+                "name": "mapping_label",
+                "label": "@@report.labelvalue.mapping.label@@",
+                "type": "selectbox",
+                "options_ajax_on_change": "id:binder.className;binderId:binder.className;binderJson:binder.properties",
+                "options_ajax": "[CONTEXT_PATH]/web/json/console/app[APP_PATH]/builder/binder/columns",
+                "options_ajax_mapping": {
+                    "arrayObj": "columns",
+                    "value": "name",
+                    "label": "label",
+                    "addEmpty": true
+                },
+                "options_ajax_method": "POST"
+            },
+            {
+                "name": "mapping_value",
+                "label": "@@report.labelvalue.mapping.value@@",
+                "type": "selectbox",
+                "options_ajax_on_change": "id:binder.className;binderId:binder.className;binderJson:binder.properties",
+                "options_ajax": "[CONTEXT_PATH]/web/json/console/app[APP_PATH]/builder/binder/columns",
+                "options_ajax_mapping": {
+                    "arrayObj": "columns",
+                    "value": "name",
+                    "label": "label",
+                    "addEmpty": true
+                },
+                "options_ajax_method": "POST"
+            }
+        ],
+        "control_field": "type",
+        "control_value": "binder",
+        "control_use_regex": "false"
+    },
+    {
+        "title": "@@report.labelvalue.styling@@",
+        "properties": [
+            {
+                "name": "marginBottom",
+                "label": "@@report.marginBottom@@",
+                "type": "textfield",
+                "value" : "10px"
+            },
+            {
+                "name": "borderstyleheader",
+                "label": "@@report.labelvalue.borderstyle@@",
+                "type": "header"
+            },
+            {
+                "name": "padding",
+                "label": "@@report.labelvalue.padding@@",
+                "type": "textfield",
+                "value": "2px"
+            },
+            {
+                "name": "borderSize",
+                "label": "@@report.size@@",
+                "type": "textfield",
+                "value": "1px"
+            },
+            {
+                "name": "borderColor",
+                "label": "@@report.color@@",
+                "type": "color",
+                "value": "#000000",
+                "required": "true"
+            },
+            {
+                "name": "borderStyle",
+                "label": "@@report.style@@",
+                "type": "radio",
+                "value": "solid",
+                "options": [
+                    {
+                        "value": "solid",
+                        "label": "@@report.style.solid@@"
+                    },
+                    {
+                        "value": "dashed",
+                        "label": "@@report.style.dashed@@"
+                    },
+                    {
+                        "value": "dotted",
+                        "label": "@@report.style.dotted@@"
+                    },
+                    {
+                        "value": "double",
+                        "label": "@@report.style.double@@"
+                    }
+                ]
+            },
+            {
+                "name": "labelstyle",
+                "label": "@@report.labelvalue.labelstyle@@",
+                "type": "header"
+            },
+            {
+                "name": "label_width",
+                "label": "@@report.width@@",
+                "type": "textfield",
+                "value": "50%",
+                "required": "true"
+            },
+            {
+                "name": "label_bold",
+                "label": "@@report.text.bold@@",
+                "type": "checkbox",
+                "options": [
+                    {
+                        "value": "true",
+                        "label": ""
+                    }
+                ]
+            },
+            {
+                "name": "label_italic",
+                "label": "@@report.text.italic@@",
+                "type": "checkbox",
+                "options": [
+                    {
+                        "value": "true",
+                        "label": ""
+                    }
+                ]
+            },
+            {
+                "name": "label_decoration",
+                "label": "@@report.text.decoration@@",
+                "type": "checkbox",
+                "options": [
+                    {
+                        "value": "underline",
+                        "label": "@@report.text.underline@@"
+                    },
+                    {
+                        "value": "overline",
+                        "label": "@@report.text.overline@@"
+                    },
+                    {
+                        "value": "line-through",
+                        "label": "@@report.text.strikeThrough@@"
+                    }
+                ]
+            },
+            {
+                "name": "label_size",
+                "label": "@@report.size@@",
+                "type": "textfield"
+            },
+            {
+                "name": "label_align",
+                "label": "@@report.align@@",
+                "type": "radio",
+                "value": "left",
+                "options": [
+                    {
+                        "value": "left",
+                        "label": "@@report.align.left@@"
+                    },
+                    {
+                        "value": "center",
+                        "label": "@@report.align.center@@"
+                    },
+                    {
+                        "value": "right",
+                        "label": "@@report.align.right@@"
+                    }
+                ]
+            },
+            {
+                "name": "label_color",
+                "label": "@@report.color@@",
+                "type": "color"
+            },
+            {
+                "name": "label_background",
+                "label": "@@report.labelvalue.backgroundcolor@@",
+                "type": "color"
+            },
+            {
+                "name": "valuestyle",
+                "label": "@@report.labelvalue.valuestyle@@",
+                "type": "header"
+            },
+            {
+                "name": "value_width",
+                "label": "@@report.width@@",
+                "type": "textfield",
+                "value": "50%",
+                "required": "true"
+            },
+            {
+                "name": "value_bold",
+                "label": "@@report.text.bold@@",
+                "type": "checkbox",
+                "options": [
+                    {
+                        "value": "true",
+                        "label": ""
+                    }
+                ]
+            },
+            {
+                "name": "value_italic",
+                "label": "@@report.text.italic@@",
+                "type": "checkbox",
+                "options": [
+                    {
+                        "value": "true",
+                        "label": ""
+                    }
+                ]
+            },
+            {
+                "name": "value_decoration",
+                "label": "@@report.text.decoration@@",
+                "type": "checkbox",
+                "options": [
+                    {
+                        "value": "underline",
+                        "label": "@@report.text.underline@@"
+                    },
+                    {
+                        "value": "overline",
+                        "label": "@@report.text.overline@@"
+                    },
+                    {
+                        "value": "line-through",
+                        "label": "@@report.text.strikeThrough@@"
+                    }
+                ]
+            },
+            {
+                "name": "value_size",
+                "label": "@@report.size@@",
+                "type": "textfield"
+            },
+            {
+                "name": "value_align",
+                "label": "@@report.align@@",
+                "type": "radio",
+                "value": "left",
+                "options": [
+                    {
+                        "value": "left",
+                        "label": "@@report.align.left@@"
+                    },
+                    {
+                        "value": "center",
+                        "label": "@@report.align.center@@"
+                    },
+                    {
+                        "value": "right",
+                        "label": "@@report.align.right@@"
+                    }
+                ]
+            },
+            {
+                "name": "value_color",
+                "label": "@@report.color@@",
+                "type": "color"
+            },
+            {
+                "name": "value_background",
+                "label": "@@report.labelvalue.backgroundcolor@@",
+                "type": "color"
+            }
+        ]
+    }
+]
+

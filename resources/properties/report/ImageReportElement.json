@@ -1,0 +1,60 @@
+[
+    {
+        "title": "@@report.image.edit@@",
+        "properties": [
+            {
+                "name": "id",
+                "label": "ID",
+                "type": "hidden"
+            },
+            {
+                "name": "path",
+                "label": "@@report.image.path@@",
+                "type": "image",
+                "appPath": "[APP_PATH]",
+                "allowInput": "true",
+                "isPublic": "true",
+                "imageSize": "width:100px;height:70px;",
+                "required": "true"
+            },
+            {
+                "name": "width",
+                "label": "@@report.width@@",
+                "type": "textfield",
+                "value": "100px" 
+            },
+            {
+                "name": "height",
+                "label": "@@report.height@@",
+                "type": "textfield"
+            },
+            {
+                "name": "halign",
+                "label": "@@report.align@@",
+                "type": "radio",
+                "value": "left",
+                "options": [
+                    {
+                        "value": "left",
+                        "label": "@@report.align.left@@"
+                    },
+                    {
+                        "value": "center",
+                        "label": "@@report.align.center@@"
+                    },
+                    {
+                        "value": "right",
+                        "label": "@@report.align.right@@"
+                    }
+                ]
+            },
+            {
+                "name": "marginBottom",
+                "label": "@@report.marginBottom@@",
+                "type": "textfield",
+                "value" : "10px"
+            }
+        ]
+    }
+]
+

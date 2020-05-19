@@ -1,0 +1,20 @@
+[
+    {
+        "title": "@@report.emptySpace.edit@@",
+        "properties": [
+            {
+                "name": "id",
+                "label": "ID",
+                "type": "hidden"
+            },
+            {
+                "name": "height",
+                "label": "@@report.height@@",
+                "type": "textfield",
+                "value": "20px",
+                "required": "true"
+            }
+        ]
+    }
+]
+

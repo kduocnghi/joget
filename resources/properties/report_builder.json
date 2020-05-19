@@ -1,0 +1,83 @@
+{
+    "builder" : {
+        "callbacks" : {
+            "initBuilder" : "ReportBuilder.initBuilder",
+            "load" : "ReportBuilder.load",
+            "saveEditProperties" : "ReportBuilder.saveEditProperties"
+        }
+    },
+    "advanced_tools" : {
+        "tree_viewer" : {
+            "childs_properties" : ["elements", "header", "body", "footer"],
+            "matchers" : {
+                "reportpart" : {
+                    "match" : function (viewer, deferreds, node, jsonObj, refObj) {
+                        if (jsonObj['body'] !== undefined) {
+                            //header
+                            var headerNode = node['children'][1];
+                            headerNode.text = get_cbuilder_msg("reportBuilder.header");
+                            headerNode.type = 'childs';
+                            headerNode.a_attr['class'] += " properties";
+                            headerNode.state = {
+                                opened: open
+                            };
+                            for (var j in jsonObj['header']['elements']) {
+                                open = true;
+                                var c = jsonObj['header']['elements'][j];
+                                var cnode = $.extend(true, {}, DependencyTree.Node);
+                                cnode.data['isCustomBuilder'] = true;
+                                cnode.data['parent'] = headerNode;
+                                headerNode.children.push(cnode);
+                                DependencyTree.Util.runMatchers(viewer, deferreds, cnode, c);
+                            }
+                            
+                            //body
+                            var bodyNode = node['children'][2];
+                            bodyNode.text = get_cbuilder_msg("reportBuilder.body"); 
+                            bodyNode.type = 'childs';
+                            bodyNode.a_attr['class'] += " properties";
+                            bodyNode.state = {
+                                opened: open
+                            };
+                            for (var j in jsonObj['body']['elements']) {
+                                open = true;
+                                var c = jsonObj['body']['elements'][j];
+                                var cnode = $.extend(true, {}, DependencyTree.Node);
+                                cnode.data['isCustomBuilder'] = true;
+                                cnode.data['parent'] = bodyNode;
+                                bodyNode.children.push(cnode);
+                                DependencyTree.Util.runMatchers(viewer, deferreds, cnode, c);
+                            }
+                            
+                            //footer
+                            var footerNode = node['children'][3];
+                            footerNode.text = get_cbuilder_msg("reportBuilder.footer"); 
+                            footerNode.type = 'childs';
+                            footerNode.a_attr['class'] += " properties";
+                            footerNode.state = {
+                                opened: open
+                            };
+                            for (var j in jsonObj['footer']['elements']) {
+                                open = true;
+                                var c = jsonObj['footer']['elements'][j];
+                                var cnode = $.extend(true, {}, DependencyTree.Node);
+                                cnode.data['isCustomBuilder'] = true;
+                                cnode.data['parent'] = footerNode;
+                                footerNode.children.push(cnode);
+                                DependencyTree.Util.runMatchers(viewer, deferreds, cnode, c);
+                            }
+                            
+                        }
+                        return false;
+                    }
+                }
+            }
+        },
+        "permission" : {
+            "element_support_plugin" : ["org.joget.plugin.report.lib.Row"],
+            "ignore_classes" : ["org.joget.plugin.report.lib.Column"],
+            "childs_properties" : null,
+            "render_elements_callback": "ReportBuilder.renderPermissionElements"
+        }
+    }   
+}
